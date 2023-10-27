@@ -14,7 +14,7 @@ class DeBlock {
 }
 
 
-DeBlock::DeBlock(){
+DeBlock::DeBlock(tElem* elems, int n, int b){
 
 }
 
@@ -22,4 +22,18 @@ int DeBlock::insert(int pos, tElem elem){
 
 }
 
-tElem DeBlock::
+tElem DeBlock::erase(int pos){
+
+}
+
+tElem DeBlock::get_value(int pos){
+
+}
+
+int DeBlock:: length(){
+
+}
+
+void DeBlock::clear(){
+
+}
