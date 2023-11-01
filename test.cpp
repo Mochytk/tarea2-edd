@@ -33,13 +33,29 @@ int main(){
     linea >> operation; // Sacamos la operacion de la linea leyendo el primer token
     
     if (operation == "I"){
+      int pos; // Creamos un entero para guardar la posición
+      tElem val; // Creamos un tElem para guardar el valor a insertar
+      linea >> pos >> val; // las leemos de la linea de la operación
+      
+      int insertado = insert(pos, val);
+      
+      if (insertado == 1){
+        cout << insertado << endl;
+      } else {
+        cout << "Error al insertar el elemento" << endl;
+      }
       
       n++;
     } else if (operation == "G"){
-      
+      int pos;
+      linea >> pos;
+      if (pos <= n){
+        cout << lista[pos];
+      } else {
+        cout << "Posición fuera de rango" << endl;
+      }    
     } else if (operation == "L"){
       cout << n << endl;
     }
   }
-  
 }
