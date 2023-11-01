@@ -39,18 +39,10 @@ int DeBlock::insert(int pos, tElem elem){
   
 }
 
-tElem DeBlock::erase(int pos){
-  
-}
-
 tElem DeBlock::get_value(int pos){
   
 }
 
 int DeBlock:: length(){
-  
-}
-
-void DeBlock::clear(){
   
 }
