@@ -40,7 +40,7 @@ int DeBlock::insert(int pos, tElem elem){
 }
 
 tElem DeBlock::get_value(int pos){
-  
+  // Esto son ideas que tuve en una iluminación, deberiamos dividir la posición por b (la cantidad de elementos del sub bloque) y con eso podemos acceder directamente al elemento de la lista de listas, ahí ya es cosa de sacar el resto y usar eso para la posición
 }
 
 int DeBlock:: length(){
