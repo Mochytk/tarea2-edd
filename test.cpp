@@ -27,12 +27,16 @@ int main(){
   string operaciones; // Creamos un string para leer las operaciones
 
   for (int j = 0; j < cant_oper; j++){
-    getline(archivo, operaciones); // Leemos las operaciones una a una
-    string operation;
+    getline(archivo, operacion); // Leemos las operaciones una a una
+    stringstream linea(operacion) // Con un stringstream para analizar la linea como tokens separados
+    string operation; // Generamos el string operation
+    linea >> operation; // Sacamos la operacion de la linea leyendo el primer token
+    
     if (operation == "I"){
       
       n++;
     } else if (operation == "G"){
+      
     } else if (operation == "L"){
       cout << n << endl;
     }
