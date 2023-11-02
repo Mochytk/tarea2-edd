@@ -10,10 +10,8 @@ class DeBlock {
   public:
     DeBlock(tElem* elems, int n, int b);
     int insert(int pos, tElem elem);
-    tElem erase(int pos);
     tElem get_value(int pos);
     int length();
-    void clear();
 };
 
 DeBlock::DeBlock(tElem* elems, int n, int b) {
@@ -42,22 +40,6 @@ int DeBlock::insert(int pos, tElem elem) {
     return 1;
 }
 
-tElem DeBlock::erase(int pos) {
-    if (pos < 0 || pos >= cant_elems) {
-      std::cout << "Posición no valida" << "\n";
-    }
-
-    int block_number = pos / l.length();
-    int pos_in_block = pos % l.length();
-
-    l.moveToPos(block_number * l.length() + pos_in_block);
-
-    tElem deleted_value = l.erase();
-
-    cant_elems--;
-    return deleted_value;
-}
-
 tElem DeBlock::get_value(int pos) {
     if (pos < 0 || pos >= cant_elems) {
       std::cout << "Posición no valida" << "\n"; 
@@ -75,7 +57,3 @@ int DeBlock::length() {
     return cant_elems;
 }
 
-void DeBlock::clear() {
-    l.clear();
-    cant_elems = 0;
-}
