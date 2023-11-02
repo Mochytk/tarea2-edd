@@ -40,7 +40,8 @@ int main() {
         } else if (operation == "I") {
             int pos, value;
             iss >> pos >> value;
-            db.insert(pos, value);
+            int a = db.insert(pos, value);
+            std::cout << a << std::endl;
         } else if (operation == "L") {
             int len = db.length();
             std::cout << len << std::endl;
