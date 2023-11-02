@@ -17,40 +17,63 @@ class DeBlock {
 };
 
 DeBlock::DeBlock(tElem* elems, int n, int b) {
-  int numBlocks = (n + b - 1) / b; // Calcula la cantidad de bloques necesarios
-  int indiceActual = 0;
+    cant_elems = n;
+    for (int i = 0; i < n; i += b) {
+        int block_size = (i + b <= n) ? b : n - i;
+        for (int j = 0; j < block_size; j++) {
+            l.append(elems[i + j]);
+        }
+    }
+}
 
-  for (int i = 0; i < numBlocks; i++) {
-    LinkList bloque; // Crea una nueva lista enlazada para cada bloque
-
-    // Llena el bloque con elementos desde el arreglo 'elems'
-    for (int j = 0; j < b && indiceActual < n; j++) {
-      bloque.append(elems[indiceActual]);
-      indiceActual++;
+int DeBlock::insert(int pos, tElem elem) {
+    if (pos < 0 || pos > cant_elems) {
+        return 0;  // Posición inválida
     }
 
-    l.append(bloque); // Agrega el bloque a la lista de bloques
-  }
+    int block_number = pos / l.length();
+    int pos_in_block = pos % l.length();
 
-  cant_elems = n; // Establece la cantidad total de elementos en 'cant_elems'
+    l.moveToPos(pos_in_block);
+
+    l.insert(elem);
+
+    cant_elems++;
+    return 1;
 }
 
-int DeBlock::insert(int pos, tElem elem){
-  
+tElem DeBlock::erase(int pos) {
+    if (pos < 0 || pos >= cant_elems) {
+    }
+
+    int block_number = pos / l.length();
+    int pos_in_block = pos % l.length();
+
+    l.moveToPos(block_number * l.length() + pos_in_block);
+
+    tElem deleted_value = l.erase();
+
+    cant_elems--;
+    return deleted_value;
 }
 
-tElem DeBlock::erase(int pos){
-  
-}
+tElem DeBlock::get_value(int pos) {
+    if (pos < 0 || pos >= cant_elems) {
+    }
 
-tElem DeBlock::get_value(int pos){
-  
+    int block_number = pos / l.length();
+    int pos_in_block = pos % l.length();
+
+    l.moveToPos(block_number * l.length() + pos_in_block);
+
+    return l.getValue();
 }
 
 int DeBlock::length() {
     return cant_elems;
 }
 
-void DeBlock::clear(){
-  
+void DeBlock::clear() {
+    l.clear();
+    cant_elems = 0;
 }
