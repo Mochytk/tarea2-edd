@@ -29,7 +29,6 @@ int DeBlock::insert(int pos, tElem elem) {
         return 0;  // Posición inválida
     }
 
-    int block_number = pos / l.length();
     int pos_in_block = pos % l.length();
 
     l.moveToPos(pos_in_block);
