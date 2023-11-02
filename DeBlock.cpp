@@ -45,7 +45,6 @@ tElem DeBlock::get_value(int pos) {
       std::cout << "Posición no valida" << "\n"; 
     }
 
-    int block_number = pos / l.length();
     int pos_in_block = pos % l.length();
 
     l.moveToPos(block_number * l.length() + pos_in_block);
