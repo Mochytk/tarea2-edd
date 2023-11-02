@@ -1,9 +1,9 @@
 1.- Sebastian Antonio Albornoz Bustamante 202273585-6 Par. 200
      Programador de:
-      
+      - test.cpp
 2.- Sergio Ignacio Cárcamo Naranjo 202273512-0 Par. 200
      Programador de:
-      
+      - DeBloc.cpp
 3.- Sergio Roberto Rojas Gutierrez 202273619-4 Par. 200
      Programador de:
-      
+      - LinkList.cpp
