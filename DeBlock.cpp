@@ -44,6 +44,7 @@ int DeBlock::insert(int pos, tElem elem) {
 
 tElem DeBlock::erase(int pos) {
     if (pos < 0 || pos >= cant_elems) {
+      std::cout << "Posición no valida" << "\n";
     }
 
     int block_number = pos / l.length();
@@ -59,6 +60,7 @@ tElem DeBlock::erase(int pos) {
 
 tElem DeBlock::get_value(int pos) {
     if (pos < 0 || pos >= cant_elems) {
+      std::cout << "Posición no valida" << "\n"; 
     }
 
     int block_number = pos / l.length();
