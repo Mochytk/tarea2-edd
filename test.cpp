@@ -11,22 +11,22 @@ int main() {
         return 1;
     }
 
-    int n, b;
-    inputFile >> n >> b;
+    int tam_ori, tam_blo;
+    inputFile >> tam_ori >> tam_blo;
 
-    tElem* elems = new tElem[n];
-    for (int i = 0; i < n; i++) {
+    tElem* elems = new tElem[tam_ori];
+    for (int i = 0; i < tam_ori; i++) {
         inputFile >> elems[i];
     }
 
-    DeBlock db(elems, n, b);
+    DeBlock db(elems, tam_ori, tam_blo);
 
-    int q;
-    inputFile >> q;
+    int cant_op;
+    inputFile >> cant_op;
 
     std::string line;
     std::getline(inputFile, line); // Leer línea en blanco después de q
-    for (int i = 0; i < q; i++) {
+    for (int i = 0; i < cant_op; i++) {
         std::getline(inputFile, line);
         std::istringstream iss(line);
         std::string operation;
