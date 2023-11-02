@@ -1,4 +1,4 @@
-typedef char tList;
+typedef int tList;
 
 class LinkList
 {
