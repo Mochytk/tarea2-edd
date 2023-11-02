@@ -27,8 +27,8 @@ int main() {
     std::string line;
     std::getline(inputFile, line); // Leer línea en blanco después de q
     for (int i = 0; i < cant_op; i++) {
-        std::getline(inputFile, line);
-        std::istringstream iss(line);
+        std::getline(inputFile, linea);
+        std::istringstream iss(linea);
         std::string operation;
         iss >> operation;
         
