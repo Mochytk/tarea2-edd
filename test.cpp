@@ -41,6 +41,11 @@ int main() {
             int pos, value;
             iss >> pos >> value;
             int a = db.insert(pos, value);
+
+            if (a == 0){
+                std::cout << "Error al insertar el elemento" << std::endl;    
+            }
+            
             std::cout << a << std::endl;
         } else if (operation == "L") {
             int len = db.length();
