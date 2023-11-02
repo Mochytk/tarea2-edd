@@ -64,5 +64,5 @@ int main() {
 
     delete[] elems;
     inputFile.close();
-    return 0;
+    return 0;
 }
