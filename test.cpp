@@ -30,7 +30,7 @@ int main() {
     inputFile >> cant_op;
     //numero de operaciones que hará el archivo de entrada
     
-    std::string line;
+    std::string linea;
     std::getline(inputFile, linea); // Leer línea en blanco después de q
     
     for (int i = 0; i < cant_op; i++) {
